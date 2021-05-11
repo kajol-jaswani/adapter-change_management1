@@ -2,7 +2,7 @@
 const options = {
   url: 'https://dev104206.service-now.com/',
   username: 'admin',
-  password: 'ALwdn4mNeWK6'
+  password: 'ht8SMOzwU3vK'
 };
 
 
@@ -96,10 +96,9 @@ function get(serviceNowTable, callback) {
 
 }
 
-
 /**
  * @function post
- * @description Call the ServiceNow POST API.
+ * @description Call the ServiceNow POST API..
  *
  * @param {string} serviceNowTable - The table target of the ServiceNow table API.
  * @param {iapCallback} callback - Callback a function.
@@ -107,7 +106,7 @@ function get(serviceNowTable, callback) {
  *   Will be HTML text if hibernating instance.
  * @param {error} callback.error - The error property of callback.
  */
-function get(serviceNowTable, callback) {
+function post(serviceNowTable, callback) {
 
   // Initialize return arguments for callback
   let callbackData = null;
