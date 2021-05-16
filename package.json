@@ -18,5 +18,13 @@
   "homepage": "https://github.com/kajol-jaswani/adapter-change_management#readme",
   "dependencies": {
     "request": "^2.88.2"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "An",
+    "IAP",
+    "change",
+    "management",
+    "adapter."
+  ]
 }
