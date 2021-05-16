@@ -2,7 +2,7 @@
 const options = {
   url: 'https://dev104206.service-now.com/',
   username: 'admin',
-  password: 'ht8SMOzwU3vK'
+  password: 'T0hGmqeqIY9C'
 };
 
 
@@ -98,7 +98,7 @@ function get(serviceNowTable, callback) {
 
 /**
  * @function post
- * @description Call the ServiceNow POST API..
+ * @description Call the ServiceNow POST API.
  *
  * @param {string} serviceNowTable - The table target of the ServiceNow table API.
  * @param {iapCallback} callback - Callback a function.
@@ -155,6 +155,7 @@ function post(serviceNowTable, callback) {
 
 }
 
+// This test function calls your request and logs any errors.
 /*
  * This section is used to test your project.
  * We will test both get() and post() functions.
@@ -175,5 +176,6 @@ function main() {
     console.log(`\nResponse returned from POST request:\n${JSON.stringify(data)}`)
   });
 }
+
 // Call main to run it.
 main();
