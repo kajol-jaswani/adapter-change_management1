@@ -1,4 +1,4 @@
-/ Import built-in Node.js package path.
+// Import built-in Node.js package path.
 const path = require('path');
 
 /**
@@ -8,6 +8,7 @@ const path = require('path');
  * Built-in module path's join method constructs the absolute filename.
  */
 const ServiceNowConnector = require(path.join(__dirname, '/connector.js'));
+console.log("Sevice Now connectorrrrrrrrrrrrrrrrrrrrr");
 console.log(ServiceNowConnector);
 /**
  * Import built-in Node.js package events' EventEmitter class and
@@ -15,6 +16,7 @@ console.log(ServiceNowConnector);
  * from this class.
  */
 const EventEmitter = require('events').EventEmitter;
+console.log("Emiteerrrrrrrrrrrrrrrrrrrrrrrrr");
 console.log(EventEmitter);
 /**
  * The ServiceNowAdapter class.
@@ -62,8 +64,8 @@ class ServiceNowAdapter extends EventEmitter {
     this.props = adapterProperties;
     // Instantiate an object from the connector.js module and assign it to an object property.
 
-   //console.log("settingssssss"+EventEmitter.adapterProperties);
-    //console.log("Connectorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr in construct");
+   console.log("settingssssss"+EventEmitter.adapterProperties);
+    console.log("Connectorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr in construct");
     console.log(this.connector);
     this.connector = new ServiceNowConnector({
       url: this.props.url,
@@ -151,12 +153,12 @@ class ServiceNowAdapter extends EventEmitter {
    *   handles the response.
    */
   getRecord(callback) {
-  //    console.log("In Get Methoddddddddddddd");
+      console.log("In Get Methoddddddddddddd");
     console.log(ServiceNowConnector.getCallOptions);
     let getCallOptions = { ...this.options };
     getCallOptions.method = 'GET';
     getCallOptions.query = 'sysparm_limit=1';
-//console.log("In Get Methoddddddddddddd");
+console.log("In Get Methoddddddddddddd");
     console.log(ServiceNowConnector.getRecord(callback));
   }
 
