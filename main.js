@@ -1,4 +1,4 @@
-// Import built-in Node.js package path.
+/ Import built-in Node.js package path.
 const path = require('path');
 
 /**
@@ -8,14 +8,14 @@ const path = require('path');
  * Built-in module path's join method constructs the absolute filename.
  */
 const ServiceNowConnector = require(path.join(__dirname, '/connector.js'));
-
+console.log(ServiceNowConnector);
 /**
  * Import built-in Node.js package events' EventEmitter class and
  * assign it to constant EventEmitter. We will create a child class
  * from this class.
  */
 const EventEmitter = require('events').EventEmitter;
-
+console.log(EventEmitter);
 /**
  * The ServiceNowAdapter class.
  *
@@ -53,6 +53,7 @@ class ServiceNowAdapter extends EventEmitter {
    * @param {string} id - Adapter instance's ID.
    * @param {ServiceNowAdapter~adapterProperties} adapterProperties - Adapter instance's properties object.
    */
+
   constructor(id, adapterProperties) {
     // Call super or parent class' constructor.
     super();
@@ -60,6 +61,10 @@ class ServiceNowAdapter extends EventEmitter {
     this.id = id;
     this.props = adapterProperties;
     // Instantiate an object from the connector.js module and assign it to an object property.
+
+   //console.log("settingssssss"+EventEmitter.adapterProperties);
+    //console.log("Connectorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr in construct");
+    console.log(this.connector);
     this.connector = new ServiceNowConnector({
       url: this.props.url,
       username: this.props.auth.username,
@@ -146,15 +151,13 @@ class ServiceNowAdapter extends EventEmitter {
    *   handles the response.
    */
   getRecord(callback) {
-      let getCallOptions = { ...this.options };
+  //    console.log("In Get Methoddddddddddddd");
+    console.log(ServiceNowConnector.getCallOptions);
+    let getCallOptions = { ...this.options };
     getCallOptions.method = 'GET';
     getCallOptions.query = 'sysparm_limit=1';
-    /**
-     * Write the body for this function.
-     * The function is a wrapper for this.connector's get() method.
-     * Note how the object was instantiated in the constructor().
-     * get() takes a callback function.
-     */
+//console.log("In Get Methoddddddddddddd");
+    console.log(ServiceNowConnector.getRecord(callback));
   }
 
   /**
@@ -167,13 +170,7 @@ class ServiceNowAdapter extends EventEmitter {
    *   handles the response.
    */
   postRecord(callback) {
-    /**
-     * Write the body for this function.
-     * The function is a wrapper for this.connector's post() method.
-     * Note how the object was instantiated in the constructor().
-     * post() takes a callback function.
-     */
-     this.connector.postRecord(callback);
+ this.connector.postRecord(callback);
   }
 }
 
